@@ -1,0 +1,840 @@
+getData([
+    {
+        "name": "常用推荐",
+        "en_name": "Recommended",
+        "icon": "linecons-star",
+        "web": [
+            {
+                "url": "http://tool.chinaz.com/",
+                "logo": "assets/images/logos/chinaz.jfif",
+                "title": "站长之家",
+                "desc": "提供许多搜索服务"
+            },
+            {
+                "url": "https://www.zoomeye.org/",
+                "logo": "assets/images/logos/zoomeye.jpg",
+                "title": "ZoomEye",
+                "desc": "知道创宇的网络空间搜索引擎"
+            },
+            {
+                "url": "https://web.archive.org/",
+                "logo": "assets/images/logos/waybackmachine.png",
+                "title": "WayBack Machine",
+                "desc": "网站的历史归档信息"
+            },
+            {
+                "url": "https://github.com/ElevenPaths/FOCA",
+                "logo": "assets/images/logos/github.jpg",
+                "title": "FOCA",
+                "desc": "获取目标网站上文件中的元数据"
+            },
+        ]
+    },
+    
+    {
+        "name": "域名信息",
+        "en_name": "Domain Info",
+        "icon": "linecons-doc",
+        "children": [
+            {
+                "name": "Whois-查询",
+                "en_name": "Whois Query",
+                "web": [
+                    {
+                        "url": "http://whois.chinaz.com/",
+                        "logo": "assets/images/logos/chinaz.jfif",
+                        "title": "站长之家--Whois",
+                        "desc": "站长之家提供的Whois查询服务"
+                    },
+                    {
+                        "url": "https://whois.aizhan.com/",
+                        "logo": "assets/images/logos/aizhan.png",
+                        "title": "爱站网--Whois",
+                        "desc": "爱站网提供的Whois查询服务"
+                    },
+                    {
+                        "url": "https://viewdns.info/",
+                        "logo": "assets/images/logos/viewdns.jfif",
+                        "title": "ViewDNS",
+                        "desc": "DNS查询合集"
+                    },
+                    {
+                        "url": "https://site.ip138.com/",
+                        "logo": "assets/images/logos/ip138.png",
+                        "title": "IP138--IP或域名查询",
+                        "desc": "网站风格简洁"
+                    },
+                    {
+                        "url": "https://www.whois.net/",
+                        "logo": "assets/images/logos/whois_net.png",
+                        "title": "Whois.Net",
+                        "desc": "始于1999年的Whois查询服务（翻墙）"
+                    },
+                    {
+                        "url": "https://lookup.icann.org/",
+                        "logo": "assets/images/logos/ICANN.png",
+                        "title": "ICANN Lookup",
+                        "desc": "ICANN的Whois查询服务"
+                    },
+                    {
+                        "url": "https://whois.cloud.tencent.com/domain",
+                        "logo": "assets/images/logos/tencent.jfif",
+                        "title": "腾讯云--Whois",
+                        "desc": "腾讯云的Whois查询服务"
+                    },
+                    {
+                        "url": "http://whois.xinnet.com/",
+                        "logo": "assets/images/logos/xinnet.png",
+                        "title": "新网--Whois",
+                        "desc": "新网的Whois查询服务"
+                    },
+                ]
+            },
+            {
+                "name": "企业信息查询",
+                "en_name": "Company Info Query",
+                "web": [
+                    {
+                        "url": "http://www.beian.miit.gov.cn/publish/query/indexFirst.action",
+                        "logo": "assets/images/logos/ICP.png",
+                        "title": "工信部备案查询",
+                        "desc": "（官方）工信部官方备案查询网站"
+                    },
+                    {
+                        "url": "http://icp.chinaz.com/",
+                        "logo": "assets/images/logos/chinaz.jfif",
+                        "title": "站长之家--ICP备案查询",
+                        "desc": "站长之家的ICP备案查询服务"
+                    },
+                    {
+                        "url": "https://www.sec.gov/edgar/searchedgar/companysearch.html",
+                        "logo": "assets/images/logos/EDGAR.png",
+                        "title": "EDGAR",
+                        "desc": "美国企业备案查询"
+                    },
+                    {
+                        "url": "http://www.gsxt.gov.cn/index.html",
+                        "logo": "assets/images/logos/nation.png",
+                        "title": "国家企业信用信息公示系统",
+                        "desc": "国家企业信用信息公示官方网站"
+                    },
+                    {
+                        "url": "http://company.xizhi.com/",
+                        "logo": "assets/images/logos/xizhi.jfif",
+                        "title": "悉知--全国企业信息查询",
+                        "desc": "第三方全国企业信息查询服务"
+                    },
+                    {
+                        "url": "https://www.creditchina.gov.cn/",
+                        "logo": "assets/images/logos/nation.png",
+                        "title": "信用中国",
+                        "desc": "（官方）个人信用查询搜索-企业信息查询搜索-统一社会信用代码查询"
+                    },
+                    {
+                        "url": "http://114.55.181.28/databaseInfo/index",
+                        "logo": "assets/images/logos/cloud.jpg",
+                        "title": "全国政府网站基本数据库",
+                        "desc": "全国政府网站基本数据库"
+                    },
+                ]
+            },
+            {
+                "name": "子域名查询",
+                "en_name": "Sundomain Query",
+                "web": [
+                    {
+                        "url": "http://tool.chinaz.com/subdomain",
+                        "logo": "assets/images/logos/chinaz.jfif",
+                        "title": "站长之家--子域名查询",
+                        "desc": "站长之家的子域名查询服务"
+                    },
+                    {
+                        "url": "https://site.ip138.com/",
+                        "logo": "assets/images/logos/ip138.png",
+                        "title": "IP138--子域名查询",
+                        "desc": "IP138的子域名查询服务"
+                    },
+                    {
+                        "url": "https://hackertarget.com/find-dns-host-records/",
+                        "logo": "assets/images/logos/hacker_target.png",
+                        "title": "Hacker Target",
+                        "desc": "国外的子域名查询服务"
+                    },
+                    {
+                        "url": "https://github.com/mschwager/fierce",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "Fierce",
+                        "desc": " DNS枚举工具，kali自带"
+                    }
+                ]
+            },
+            {
+                "name": "证书透明度查询",
+                "en_name": "Cert Transparency Query",
+                "web": [
+                    {
+                        "url": "https://crt.sh",
+                        "logo": "assets/images/logos/crt_sh.png",
+                        "title": "Cert.sh",
+                        "desc": "第三方Cert查询服务"
+                    },
+                    {
+                        "url": "https://censys.io/",
+                        "logo": "assets/images/logos/censys.png",
+                        "title": "Censys",
+                        "desc": "较为权威的Cert查询服务"
+                    },
+                ]
+            },
+            {
+                "name": "SEO查询",
+                "en_name": "SEO Query",
+                "web": [
+                    {
+                        "url": "http://rank.chinaz.com/all/",
+                        "logo": "assets/images/logos/chinaz.jfif",
+                        "title": "站长之家--SEO查询",
+                        "desc": "站长之家的SEO查询服务"
+                    },
+                    {
+                        "url": "https://www.aizhan.com/seo/",
+                        "logo": "assets/images/logos/aizhan.png",
+                        "title": "爱站--SEO查询",
+                        "desc": "爱站的SEO查询服务"
+                    },
+                ]
+            },
+        ]
+    },
+
+    {
+        "name": "应用信息",
+        "en_name": "Application Info",
+        "icon": "linecons-lightbulb",
+        "children": [
+            {
+                "name": "官方账号查询",
+                "en_name": "Pro Account Query",
+                "web": [
+                    {
+                        "url": "https://www.tianyancha.com/",
+                        "logo": "assets/images/logos/tianyancha.jpg",
+                        "title": "天眼查",
+                        "desc": "获取目标企业的微信公众号、微博、备案站点、软件著作权等信息"
+                    },
+                    {
+                        "url": "https://www.qichacha.com/",
+                        "logo": "assets/images/logos/qichacha.jfif",
+                        "title": "企查查",
+                        "desc": "人民银行备案企业征信机构"
+                    },
+                    {
+                        "url": "https://www.xiaolanben.com/",
+                        "logo": "assets/images/logos/xiaolanben.png",
+                        "title": "小蓝本",
+                        "desc": "商业情报免费查询"
+                    },
+                ]
+            },
+            {
+                "name": "APP查询",
+                "en_name": "APP Query",
+                "web": [
+                    {
+                        "url": "https://www.qimai.cn/",
+                        "logo": "assets/images/logos/qimai.jfif",
+                        "title": "七麦数据",
+                        "desc": "获取移动应用数据"
+                    },
+                    {
+                        "url": "https://apps.apple.com/",
+                        "logo": "assets/images/logos/appstore.jpg",
+                        "title": "AppStore",
+                        "desc": "查询同开发商应用，得到目标所有APP应用"
+                    },
+                ]
+            },
+            {
+                "name": "邮箱信息查询",
+                "en_name": "Email Info Query",
+                "web": [
+                    {
+                        "url": "https://github.com/m4ll0k/Infoga",
+                        "logo": "assets/images/logos/infoga.jpg",
+                        "title": "Infoga",
+                        "desc": "从不同的公共源网络收集电子邮件帐户信息"
+                    },
+                    {
+                        "url": "https://haveibeenpwned.com/",
+                        "logo": "assets/images/logos/haveibeenpwned.jpg",
+                        "title": "HaveIBeenPowned",
+                        "desc": "查询电子邮箱是否被泄露过"
+                    },
+                ]
+            },
+        ]
+    },
+
+    {
+        "name": "IP && Port",
+        "en_name": "IP && Port",
+        "icon": "linecons-thumbs-up",
+        "children": [
+            {
+                "name": "IP信息",
+                "en_name": "IP Info",
+                "web": [
+                    {
+                        "url": "https://dnslytics.com/",
+                        "logo": "assets/images/logos/dnslytics.png",
+                        "title": "Dnslytics",
+                        "desc": "国外的IP信息查询服务"
+                    },
+                    {
+                        "url": "https://hackertarget.com/ip-tools/",
+                        "logo": "assets/images/logos/hacker_target.png",
+                        "title": "Hacker Target",
+                        "desc": "IP信息搜索工具合集"
+                    },
+                    {
+                        "url": "https://www.arin.net/",
+                        "logo": "assets/images/logos/arin.png",
+                        "title": "ARIN",
+                        "desc": "美国区域互联网注册管理机构"
+                    },
+                    {
+                        "url": "https://phpinfo.me/bing.php",
+                        "logo": "assets/images/logos/tuzi.jpg",
+                        "title": "在线C段查询",
+                        "desc": "在线C段查询服务"
+                    },
+                    {
+                        "url": "http://ip.chinaz.com/",
+                        "logo": "assets/images/logos/chinaz.jfif",
+                        "title": "站长之家--IP查询",
+                        "desc": "站长之家的IP信息查询服务"
+                    },
+                    {
+                        "url": "https://www.yougetsignal.com/tools/network-location/",
+                        "logo": "assets/images/logos/yougetsignal.png",
+                        "title": "YouGetSignal",
+                        "desc": "根据IP查询地理位置"
+                    },
+                    {
+                        "url": "https://www.ip-adress.com/ip-address/lookup",
+                        "logo": "assets/images/logos/trace.jpg",
+                        "title": "IP-Address",
+                        "desc": "IP跟踪"
+                    },
+                    {
+                        "url": "https://spyse.com/",
+                        "logo": "assets/images/logos/spyse.png",
+                        "title": "Spyse",
+                        "desc": "查找有关Internet资产的技术信息"
+                    },
+                ]
+            },
+            {
+                "name": "反查域名",
+                "en_name": "Domain Reverse Query",
+                "web": [
+                    {
+                        "url": "http://s.tool.chinaz.com/same",
+                        "logo": "assets/images/logos/chinaz.jfif",
+                        "title": "站长之家--IP关联域名",
+                        "desc": "站长之家IP关联域名查询服务"
+                    },
+                    {
+                        "url": "http://dns.aizhan.com/",
+                        "logo": "assets/images/logos/aizhan.png",
+                        "title": "爱站--IP关联域名",
+                        "desc": "爱站IP关联域名查询服务"
+                    },
+                    {
+                        "url": "https://webscan.cc/",
+                        "logo": "assets/images/logos/webscan.png",
+                        "title": "Webscan",
+                        "desc": "IP反查服务（需连外网）"
+                    },
+                    {
+                        "url": "https://github.com/urbanadventurer/bing-ip2hosts",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "bing-ip2hosts",
+                        "desc": "根据IP或主机名查询域名（使用Bing爬虫）"
+                    }
+                ]
+            },
+            {
+                "name": "CDN查询",
+                "en_name": "CDN Query",
+                "web": [
+                    {
+                        "url": "http://ping.chinaz.com/",
+                        "logo": "assets/images/logos/chinaz.jfif",
+                        "title": "站长之家--全国ping",
+                        "desc": "站长之家全国ping服务"
+                    },
+                    {
+                        "url": "https://www.17ce.com/",
+                        "logo": "assets/images/logos/17ce.png",
+                        "title": "17ce",
+                        "desc": "一起测--全国ping"
+                    },
+                    {
+                        "url": "https://tools.ipip.net/newping.php",
+                        "logo": "assets/images/logos/ipip.png",
+                        "title": "IPIP",
+                        "desc": "IPIP全球ping服务（国内+国外）"
+                    },
+                    {
+                        "url": "https://asm.ca.com/en/ping.php",
+                        "logo": "assets/images/logos/asm_ca.png",
+                        "title": "ASM CA",
+                        "desc": "国外ping服务"
+                    },
+                    {
+                        "url": "https://www.cdnplanet.com/tools/cdnfinder/",
+                        "logo": "assets/images/logos/cdn.jpg",
+                        "title": "CDN Planet",
+                        "desc": "CDN查询服务"
+                    },
+                ]
+            },
+            {
+                "name": "真实IP查询",
+                "en_name": "Real IP Query",
+                "web": [
+                    {
+                        "url": "https://viewdns.info/",
+                        "logo": "assets/images/logos/viewdns.jfif",
+                        "title": "ViewDNS",
+                        "desc": "DNS查询合集"
+                    },
+                    {
+                        "url": "https://sitereport.netcraft.com/",
+                        "logo": "assets/images/logos/netcraft.png",
+                        "title": "Netcraft",
+                        "desc": "What's that site running?查询服务"
+                    },
+                    {
+                        "url": "https://x.threatbook.cn/",
+                        "logo": "assets/images/logos/threatbook.png",
+                        "title": "X情报社区",
+                        "desc": "根据域名查询信息，包含IP"
+                    },
+                    {
+                        "url": "https://tools.ipip.net/newping.php",
+                        "logo": "assets/images/logos/ipip.png",
+                        "title": "IPIP",
+                        "desc": "全球全国ping，对比ip，也可找到真实IP"
+                    },
+                ]
+            },
+            {
+                "name": "开放端口查询",
+                "en_name": "Opened Port Query",
+                "web": [
+                    {
+                        "url": "https://www.zoomeye.org/",
+                        "logo": "assets/images/logos/zoomeye.jpg",
+                        "title": "ZoomEye",
+                        "desc": "知道创宇的网络空间搜索引擎"
+                    },
+                    {
+                        "url": "https://www.shodan.io/",
+                        "logo": "assets/images/logos/shodan.jpg",
+                        "title": "Shodan",
+                        "desc": "国外著名网络空间搜索引擎"
+                    },
+                    {
+                        "url": "https://fofa.so/",
+                        "logo": "assets/images/logos/fofa.png",
+                        "title": "FOFA",
+                        "desc": "白帽汇推出的网络空间搜索引擎"
+                    },
+                    {
+                        "url": "https://censys.io/ipv4",
+                        "logo": "assets/images/logos/censys.png",
+                        "title": "Censys",
+                        "desc": "公益项目，搜索数据完全免费"
+                    },
+                    {
+                        "url": "https://nmap.org/nsedoc/scripts/",
+                        "logo": "assets/images/logos/nmap.jpg",
+                        "title": "Nmap官方探测脚本",
+                        "desc": "官方列出的所有探测脚本"
+                    },
+                    {
+                        "url": "https://github.com/nmap/nmap",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "Nmap",
+                        "desc": "最常用的探测工具"
+                    },
+                    {
+                        "url": "https://github.com/robertdavidgraham/masscan",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "Masscan",
+                        "desc": "快速全网扫描"
+                    },
+                    {
+                        "url": "https://github.com/zmap/zmap",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "Zmap",
+                        "desc": "号称最快的端口扫描工具"
+                    },
+                ]
+            },
+        ]
+    },
+
+    {
+        "name": "指纹识别",
+        "en_name": "Fingerprint",
+        "icon": "linecons-diamond",
+        "children": [
+            {
+                "name": "CMS识别",
+                "en_name": "CMS Identify",
+                "web": [
+                    {
+                        "url": "http://www.yunsee.cn/",
+                        "logo": "assets/images/logos/yunxi.jpg",
+                        "title": "云悉指纹",
+                        "desc": "提供网站指纹检测"
+                    },
+                    {
+                        "url": "http://finger.tidesec.net/",
+                        "logo": "assets/images/logos/tidefinger.png",
+                        "title": "潮汐指纹",
+                        "desc": "简洁的指纹检测网站"
+                    },
+                    {
+                        "url": "http://whatweb.bugscaner.com/look/",
+                        "logo": "assets/images/logos/python.jpg",
+                        "title": "在线cms指纹识别",
+                        "desc": "检测后台基于python编写"
+                    },
+                    {
+                        "url": "https://fp.shuziguanxing.com/",
+                        "logo": "assets/images/logos/finger_p.png",
+                        "title": "Finger-P",
+                        "desc": "指纹收录检测服务"
+                    },
+                    {
+                        "url": "https://github.com/Tuhinshubhra/CMSeeK",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "CMSeek",
+                        "desc": "开源CMS识别工具"
+                    },
+                ]
+            },
+            {
+                "name": "WAF识别",
+                "en_name": "WAF Identify",
+                "web": [
+                    {
+                        "url": "https://github.com/EnableSecurity/wafw00f",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "wafw00f",
+                        "desc": "开源WAF识别工具"
+                    },
+                    
+                ]
+            },
+        ]
+    },
+
+    {
+        "name": "敏感信息",
+        "en_name": "Sensor Info",
+        "icon": "linecons-pencil",
+        "children": [
+            {
+                "name": "源码泄露",
+                "en_name": "Source Code Disclosure",
+                "web": [
+                    {
+                        "url": "https://github.com/lijiejie/GitHack",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "GitHack",
+                        "desc": ".git 源码泄露"
+                    },
+                    {
+                        "url": "https://github.com/lijiejie/ds_store_exp",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "DS_Store_Exp",
+                        "desc": ".DS_Store源码泄露"
+                    },
+                    {
+                        "url": "https://github.com/kost/dvcs-ripper",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "Dvcs-Ripper",
+                        "desc": ".git, .bzr, CVS, .svn, .hg源码泄露"
+                    },
+                ]
+            },
+            {
+                "name": "备份文件泄露",
+                "en_name": "Backup Disclosure",
+                "web": [
+                    {
+                        "url": "https://github.com/sry309/ihoneyBakFileScan",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "ihoneyBakFileScan",
+                        "desc": "多进程批量网站备份文件泄露扫描工具"
+                    },
+                    
+                ]
+            },
+            {
+                "name": "敏感接口",
+                "en_name": "Sensor Interface",
+                "web": [
+                    {
+                        "url": "https://github.com/Threezh1/JSFinder",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "JSFinder",
+                        "desc": "快速在网站的js文件中提取URL，子域名"
+                    },
+                    {
+                        "url": "https://github.com/GerbenJavado/LinkFinder",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "LinkFinder",
+                        "desc": "通过JS文件来发现敏感信息、隐藏的URL链接等有用信息"
+                    },
+                ]
+            },
+            {
+                "name": "敏感文件",
+                "en_name": "Sensor File",
+                "web": [
+                    {
+                        "url": "https://github.com/Xyntax/FileSensor",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "FileSensor",
+                        "desc": "检测敏感文件的工具"
+                    },
+                    {
+                        "url": "https://github.com/jerrychan807/WSPIH",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "WSPIH",
+                        "desc": "网站个人敏感信息文件扫描器"
+                    },
+                    {
+                        "url": "https://github.com/H4ckForJob/dirmap",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "Dirmap",
+                        "desc": "高级web目录、文件扫描工具"
+                    },
+                    {
+                        "url": "https://github.com/xmendez/wfuzz",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "WFuzz",
+                        "desc": "Web Fuzz工具"
+                    },
+                    {
+                        "url": "https://github.com/Smaash/snitch",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "Snitc",
+                        "desc": "获取公开文件"
+                    },
+                ]
+            },
+            {
+                "name": "网盘泄露",
+                "en_name": "Dropbox Disclosure",
+                "web": [
+                    {
+                        "url": "https://www.lingfengyun.com/",
+                        "logo": "assets/images/logos/lingfengyun.png",
+                        "title": "凌风云搜索",
+                        "desc": "凌风云搜索--百度网盘"
+                    },
+                    {
+                        "url": "https://www.xiaobaipan.com/",
+                        "logo": "assets/images/logos/xiaobaipan.png",
+                        "title": "小白盘搜索",
+                        "desc": "小白盘搜索--百度云盘"
+                    },
+                    {
+                        "url": "https://www.xiaoso.net/",
+                        "logo": "assets/images/logos/xiaobudian.jpg",
+                        "title": "小不点搜索",
+                        "desc": "小不点搜索--微盘"
+                    },
+                    {
+                        "url": "https://www.dalipan.com/",
+                        "logo": "assets/images/logos/dalipan.png",
+                        "title": "大力盘搜索",
+                        "desc": "大力盘搜索--百度网盘"
+                    },
+                    {
+                        "url": "http://megasearch.co/",
+                        "logo": "assets/images/logos/mega.jpg",
+                        "title": "MegaSearch",
+                        "desc": "Mega网盘搜索（国外知名云盘服务）"
+                    },
+                    {
+                        "url": "https://github.com/gudegg/yunSpider",
+                        "logo": "assets/images/logos/github.jpg",
+                        "title": "YunSpider",
+                        "desc": "百度网盘爬取开源工具"
+                    },
+                ]
+            },
+        ]
+    },
+
+    {
+        "name": "历史信息",
+        "en_name": "History Info",
+        "icon": "linecons-user",
+        "children": [
+            {
+                "name": "历史归档",
+                "en_name": "History Web",
+                "web": [
+                    {
+                        "url": "https://web.archive.org/",
+                        "logo": "assets/images/logos/waybackmachine.png",
+                        "title": "WayBack Machine",
+                        "desc": "网站的历史归档信息"
+                    },
+                    {
+                        "url": "http://tool.chinaz.com/history",
+                        "logo": "assets/images/logos/chinaz.jfif",
+                        "title": "站长工具--网站历史",
+                        "desc": "提供网站的历史SEO信息"
+                    },
+                ]
+            },
+            {
+                "name": "情报威胁",
+                "en_name": "Intelligence Threat",
+                "web": [
+                    {
+                        "url": "https://www.threatminer.org/",
+                        "logo": "assets/images/logos/threatminer.png",
+                        "title": "Threat Miner",
+                        "desc": "情报威胁聚合网站，依赖CIRCL, VirusTotal等开源数据"
+                    },
+                    {
+                        "url": "https://www.circl.lu/",
+                        "logo": "assets/images/logos/circl.png",
+                        "title": "Circl",
+                        "desc": "计算机应急响应中心"
+                    },
+                ]
+            },
+            {
+                "name": "历史漏洞",
+                "en_name": "History Vulnerability",
+                "web": [
+                    {
+                        "url": "http://cve.mitre.org/",
+                        "logo": "assets/images/logos/cve.png",
+                        "title": "CVE漏洞库",
+                        "desc": "通用漏洞数据库"
+                    },
+                    {
+                        "url": "https://exploits.shodan.io/",
+                        "logo": "assets/images/logos/shodan.jpg",
+                        "title": "Exploits-Shodan",
+                        "desc": "从Exploit-db等多个漏洞库搜索POC"
+                    },
+                    {
+                        "url": "https://www.exploit-db.com/",
+                        "logo": "assets/images/logos/exploit_db.png",
+                        "title": "Exploit-db",
+                        "desc": "POC数量较多的漏洞库"
+                    },
+                    {
+                        "url": "https://www.securityfocus.com/",
+                        "logo": "assets/images/logos/securityfocus.png",
+                        "title": "SecurityFocus",
+                        "desc": "国外知名公开漏洞库"
+                    },
+                    {
+                        "url": "http://www.cnnvd.org.cn/",
+                        "logo": "assets/images/logos/cnnvd.png",
+                        "title": "CNNVD",
+                        "desc": "国家信息安全漏洞库"
+                    },
+                    {
+                        "url": "https://cxsecurity.com/exploit/",
+                        "logo": "assets/images/logos/cxsecurity.png",
+                        "title": "CXSecurity",
+                        "desc": "国外免费漏洞数据库"
+                    },
+                    {
+                        "url": "https://www.seebug.org/",
+                        "logo": "assets/images/logos/seebug.png",
+                        "title": "SeeBug",
+                        "desc": "知道创宇的漏洞数据库"
+                    },
+                    {
+                        "url": "https://nvd.nist.gov/",
+                        "logo": "assets/images/logos/nvd.png",
+                        "title": "NVD",
+                        "desc": "美国国家漏洞数据库"
+                    },
+                    {
+                        "url": "http://ivd.winicssec.com/",
+                        "logo": "assets/images/logos/ivd.png",
+                        "title": "IVD",
+                        "desc": "工控系统行业漏洞库平台"
+                    },
+                    {
+                        "url": "https://www.us-cert.gov/ics/",
+                        "logo": "assets/images/logos/cisa.png",
+                        "title": "ICS-Cert",
+                        "desc": "美国官方工控数据库"
+                    },
+                ]
+            },
+        ]
+    },
+    {
+        "name": "社会工程",
+        "en_name": "Social Engineer",
+        "icon": "linecons-star",
+        "web": [
+            {
+                "url": "https://www.exploit-db.com/google-hacking-database",
+                "logo": "assets/images/logos/ghdb.jpg",
+                "title": "GHDB",
+                "desc": "Google Hack数据库"
+            },
+            {
+                "url": "https://www.blackbookonline.info/",
+                "logo": "assets/images/logos/blackbook.png",
+                "title": "BlackBook Online",
+                "desc": "用于查询个人信息"
+            },
+            {
+                "url": "https://www.maltego.com/",
+                "logo": "assets/images/logos/maltego.jpg",
+                "title": "Maltego",
+                "desc": "著名的情报收集工具，情报可视化"
+            },
+            {
+                "url": "https://github.com/trustedsec/social-engineer-toolkit",
+                "logo": "assets/images/logos/github.jpg",
+                "title": "Social-Engineer Toolkit (SET)",
+                "desc": "开源社工工具集"
+            },
+            {
+                "url": "https://github.com/ElevenPaths/FOCA",
+                "logo": "assets/images/logos/github.jpg",
+                "title": "FOCA",
+                "desc": "获取目标网站上文件中的元数据"
+            },
+            {
+                "url": "https://github.com/Viralmaniar/I-See-You",
+                "logo": "assets/images/logos/github.jpg",
+                "title": "I-See-You",
+                "desc": "通过钓鱼获取目标地理定位信息"
+            },
+        ]
+    },
+])

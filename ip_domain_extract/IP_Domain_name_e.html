@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="Avicii">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+	<title>IP域名提取工具</title>
+	<!--网页标题左侧显示-->
+	<link rel="icon" href="js/favicon.ico" type="image/x-icon">
+	<!--收藏夹显示图标-->
+	<link rel="shortcut icon" href="js/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="js/bootstrap.min.css">
+  <script src="js/GetIP.js" type="text/javascript"></script>
+	<script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
+ </head>
+ <body>
+ <div >
+	 <div style='margin-top: 0px; margin-left:5px; margin-bottom: 0px; height: 20px;'>
+		<a style="margin-left: 5px;font-size: 30px;font-weight: 300;">IP域名提取工具</a>
+		<img src="js/159996913758530.png" alt="" style="height: 60px;">
+	 </div>
+
+ 	<span>
+ 		<button style="margin-left: 360px" class="btn btn-primary" onclick="GetIp()">IP提取</button>
+ 		<input type="checkbox" id="check1"> 去重
+ 	</span>
+	<span>
+ 	<button style="margin-left: 250px" class="btn btn-primary" onclick="getdomain()">域名提取</button>
+ 	<input type="checkbox" id="check2"> 加端口
+ 	<input type="checkbox" id="check3"> 去重
+ 	<input type="checkbox" id="check4"> 获取根域名
+ 	<input type="checkbox" id="check5"> 获取URL
+ 	</span>
+ 	
+ </div>
+ <div class="bg-light">
+  	<span>
+  		<textarea style='margin-top: 5px; margin-left:10px; margin-bottom: 0px; height: 300px;width: 1310px;' id="text1" >请粘贴要提取的文本
+  		</textarea>
+  	</span>
+ </div>
+ <div class="bg-light">
+	 <span>
+ <textarea style='margin-top: 5px; margin-left:10px;margin-bottom:0px;margin-right: 0px;height: 280px;width: 600px;padding-right: all;' id="text2">IP提取结果</textarea>
+	</span>
+ 	<span>
+ 		<textarea style='margin-top: 5px; margin-left:50px;margin-bottom:0px;margin-right: 0px;height: 280px;width: 657px;padding-right: all;' id="text3">域名提取结果
+ 		</textarea>
+ 	</span>
+ </div>
+ </body>
+</html>
