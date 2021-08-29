@@ -14,7 +14,7 @@
 
 
 
-参考：[https://blog.csdn.net/qq_38963246/article/details/117026078](https://blog.csdn.net)
+参考：[https://blog.csdn.net/](https://blog.csdn.net/qq_38963246/article/details/117026078)
 
-<img src='https://github.com/SevenC-base/P2note/blob/main/1.gif'/>
+<img src='./1.gif'/>
 
