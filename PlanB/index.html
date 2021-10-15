@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>JSONEditor</title>
+
+  <link href="./dist/jsoneditor.css" rel="stylesheet" type="text/css">
+  <script src="./dist/jsoneditor.js"></script>
+
+  <script src="https://bgrins.github.io/filereader.js/filereader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+
+  <style>
+    html, body {
+      font: 11pt sans-serif;
+    }
+    #jsoneditor {
+      width: 1300px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+
+<p>
+  加载json文件: <input type="file" id="loadDocument" value="Load"/>
+
+  保存json文件: <input type="button" id="saveDocument" value="Save" />
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;仅支持现代浏览器 (Chrome, FireFox, IE10+, Safari 6.1+, Opera 15+).
+</p>
+<div id="jsoneditor"></div>
+
+<script>
+  // create the editor
+  const editor = new JSONEditor(document.getElementById('jsoneditor'))
+
+  // Load a JSON document
+  FileReaderJS.setupInput(document.getElementById('loadDocument'), {
+    readAsDefault: 'Text',
+    on: {
+      load: function (event, file) {
+        editor.setText(event.target.result)
+      }
+    }
+  })
+
+  // Save a JSON document
+  document.getElementById('saveDocument').onclick = function () {
+    // Save Dialog
+    let fname = window.prompt("Save as...")
+
+    // Check json extension in file name
+    if (fname.indexOf(".") === -1) {
+      fname = fname + ".json"
+    } else {
+      if (fname.split('.').pop().toLowerCase() === "json") {
+        // Nothing to do
+      } else {
+        fname = fname.split('.')[0] + ".json"
+      }
+    }
+    const blob = new Blob([editor.getText()], {type: 'application/json;charset=utf-8'})
+    saveAs(blob, fname)
+  }
+</script>
+</body>
+</html>
+
+
