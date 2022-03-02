@@ -1,4 +1,6 @@
-<center><h1>P2note</h1></center>
+<h1>P2note</h1>
+
+![Follow on Twitter](https://img.shields.io/twitter/follow/Rainmaker_007?label=Follow%20&style=social) ![](https://img.shields.io/github/forks/SevenC-base/P2note) ![GitHub stars](https://img.shields.io/github/stars/SevenC-base/P2note) ![](https://img.shields.io/github/followers/SevenC-base) ![GitHub last commit](https://img.shields.io/github/last-commit/SevenC-base/IP_domain_name_extraction_tool)
 
 
 
