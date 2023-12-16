@@ -3,7 +3,24 @@
 
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />  
+	<!-- <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;"> -->
+<!--
+width=device-width ：表示宽度是设备屏幕的宽度
+initial-scale=1.0：表示初始的缩放比例
+minimum-scale=0.5：表示最小的缩放比例
+maximum-scale=2.0：表示最大的缩放比例
+user-scalable=yes：表示用户是否可以调整缩放比例
+-->
+<meta name="apple-mobile-web-app-capable" content="yes" />  
+<!--
+设定iphone端页面全屏。
+-->
+<meta name="format-detection" content="telephone=no" />  
+<!--
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+-->
+
 	<meta name="author" content="Hasaki" />
 	<title>P2note</title>
 	<link href="./data/favicon.ico" rel="shortcut icon" type="image/x-icon">
@@ -14,11 +31,13 @@
 </head>
 
 <body>
-	<div class="layui-layout layui-layout-admin layui-bg-black">
-		<div class="layui-header">
-			<div class="layui-logo layui-hide-xs layui-bg-" href="">P2note</div>
+	<div class="layui-layout layui-layout-admin">
+		<div class="layui-header layui-bg-blue">
+			<div class="layui-logo layui-hide-xs layui-bg-blue" href="">P2note</div>
 			<!-- 头部区域（可配合layui 已有的水平导航） -->
+			<div class="layui-bg-blue">
 			<ul class="layui-nav layui-layout-left">
+			
 				<!-- 移动端显示 -->
 				<li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
 					<i class="layui-icon layui-icon-spread-left"></i>
@@ -72,10 +91,11 @@
 					</dl>
 				</li>
 			</ul>
+			</div>
 		</div>
-		<div class="layui-side layui-bg-black">
-			<div class="layui-side-scroll layui-bg-black">
-				<ul id="layui-nav-left-side" class="layui-nav layui-nav-tree layui-bg-black" lay-filter="test">
+		<div class="layui-side layui-bg-gray">
+			<div class="layui-side-scroll layui-bg-gray">
+				<ul id="layui-nav-left-side" class="layui-nav layui-nav-tree  layui-bg-gray" lay-filter="test">
 					<!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
 					<dl class="layui-nav-child layui-bg-">
 						<dd><a onclick="anchor(this)" class="navItems" navTo="common">common</a></dd>
@@ -83,9 +103,9 @@
 				</ul>
 			</div>
 		</div>
-		<div id="content" class="layui-body layui-bg-black">
+		<div id="content" class="layui-body layui-bg-gray">
 			<!-- 内容主体区域 -->
-			<div id="layui-card-content" class="layui-card layui-bg-black">
+			<div id="layui-card-content" class="layui-card layui-bg-gray">
 			</div>
 		
 		</div>

@@ -1,6 +1,6 @@
 <h1>P2note</h1>
 
-![Follow on Twitter](https://img.shields.io/twitter/follow/Rainmaker_007?label=Follow%20&style=social) ![](https://img.shields.io/github/forks/SevenC-base/P2note) ![GitHub stars](https://img.shields.io/github/stars/SevenC-base/P2note) ![](https://img.shields.io/github/followers/SevenC-base) ![GitHub last commit](https://img.shields.io/github/last-commit/SevenC-base/IP_domain_name_extraction_tool)
+![](https://img.shields.io/twitter/follow/Rainmaker_007?label=Follow%20&style=social) ![](https://img.shields.io/github/forks/SevenC-base/P2note) ![GitHub stars](https://img.shields.io/github/stars/SevenC-base/P2note) ![](https://img.shields.io/github/followers/SevenC-base) ![GitHub last commit](https://img.shields.io/github/last-commit/SevenC-base/IP_domain_name_extraction_tool)
 
 
 
@@ -11,6 +11,12 @@
 ## 二、简介
 
 ​		P2note(Penetration-test payload note) 是基于layui 框架设计的一款渗透测试懒人工具，本意为**减少渗透测试人员记忆payload的数量，提升渗透测试效率**。
+
+**更新日志** 2023-12-16
+
+- 优化UI配色
+- 新增LFI、MSF、Mimikatz、Webshell、反弹shell栏目
+- 导航栏 IP_DN_Extract 新增fofa、hunter搜索引擎的语法生成功能
 
 
 
@@ -36,8 +42,6 @@
 repo:https://github.com/josdejong/jsoneditor
 
 ![](./3.jpg)
-
-
 
 
 

@@ -1,54 +1,170 @@
 <!doctype html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus®">
-  <meta name="Author" content="Avicii">
-  <meta name="Keywords" content="">
-  <meta name="Description" content="">
-	<title>IP域名提取工具</title>
-	<!--网页标题左侧显示-->
-	<link rel="icon" href="js/favicon.ico" type="image/x-icon">
-	<!--收藏夹显示图标-->
-	<link rel="shortcut icon" href="js/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="js/bootstrap.min.css">
-  <script src="js/GetIP.js" type="text/javascript"></script>
-	<script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
- </head>
- <body>
- <div >
-	 <div style='margin-top: 0px; margin-left:5px; margin-bottom: 0px; height: 20px;'>
-		<a style="margin-left: 5px;font-size: 30px;font-weight: 300;">IP域名提取工具</a>
-		<img src="js/159996913758530.png" alt="" style="height: 60px;">
-	 </div>
 
- 	<span>
- 		<button style="margin-left: 360px" class="btn btn-primary" onclick="GetIp()">IP提取</button>
- 		<input type="checkbox" id="check1"> 去重
- 	</span>
-	<span>
- 	<button style="margin-left: 250px" class="btn btn-primary" onclick="getdomain()">域名提取</button>
- 	<input type="checkbox" id="check2"> 加端口
- 	<input type="checkbox" id="check3"> 去重
- 	<input type="checkbox" id="check4"> 获取根域名
- 	<input type="checkbox" id="check5"> 获取URL
- 	</span>
- 	
- </div>
- <div class="bg-light">
-  	<span>
-  		<textarea style='margin-top: 5px; margin-left:10px; margin-bottom: 0px; height: 300px;width: 1310px;' id="text1" >请粘贴要提取的文本
-  		</textarea>
-  	</span>
- </div>
- <div class="bg-light">
-	 <span>
- <textarea style='margin-top: 5px; margin-left:10px;margin-bottom:0px;margin-right: 0px;height: 280px;width: 600px;padding-right: all;' id="text2">IP提取结果</textarea>
-	</span>
- 	<span>
- 		<textarea style='margin-top: 5px; margin-left:50px;margin-bottom:0px;margin-right: 0px;height: 280px;width: 657px;padding-right: all;' id="text3">域名提取结果
- 		</textarea>
- 	</span>
- </div>
- </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="Generator" content="EditPlus®" />
+		<meta name="Author" content="Avicii" />
+		<meta name="Keywords" content="" />
+		<meta name="Description" content="" />
+		<script src="./js/jquery-1.8.0.min.js" type="text/javascript"></script>
+		<title>IP域名提取工具</title>
+		<!--网页标题左侧显示-->
+		<link rel="icon" href="./js/favicon.ico" type="image/x-icon" />
+		<!--收藏夹显示图标-->
+		<link rel="shortcut icon" href="./js/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="./js/bootstrap.min.css" />
+
+		<!-- <script src="./js/calculateipdn.js" type="text/javascript"></script> -->
+		<script src="./js/one.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="./js/style.css">
+		<script src="./js/cute-alert.js"></script>
+		<script>
+			window.alert = alert;
+
+			function alert(mes) {
+				cuteAlert({
+					type: "info",
+					title: "提示！",
+					message: mes,
+				});
+			};
+		</script>
+
+
+		<style>
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: Arial, sans-serif;
+				height: 100%;
+			}
+
+			.header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 10px 20px;
+				background-color: #f3f3f3;
+			}
+
+			.header img {
+				height: auto;
+				max-height: 60px;
+			}
+
+			.btn-toolbar {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 10px 0;
+			}
+
+			.form-group {
+				margin: 5px;
+				margin-left: 10%;
+			}
+
+			.textarea-container {
+				display: flex;
+				margin-top: 10px;
+				margin-right: 10px;
+				height: auto;
+			}
+
+			.textarea-container textarea {
+				border: 1px solid #ced4da;
+				border-radius: 0.25rem;
+				padding: 0.375rem 0.75rem;
+				font-size: 1rem;
+				line-height: 1.5;
+				color: gray;
+				background-color: #fff;
+				background-clip: padding-box;
+				resize: vertical;
+			}
+
+			.textarea-container textarea:first-child {
+				margin-right: 1%;
+				margin-left: 1%;
+				width: 50%;
+				height: auto;
+			}
+
+			.textarea-container textarea:last-child {
+				width: calc(100% - 50%);
+				height: auto;
+			}
+
+			.form-check-input:checked#check21 {
+				background-color: blue;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style='margin-top: 0px; margin-left:1%; margin-bottom: 5px; height: 20px; margin-top: 1%;z-index: 2;'>
+			<a style="font-size: 30px; font-weight: 300;">IP域名提取工具</a>
+			<img src="./js/159996913758530.png" alt="" style="height: 30px;" />
+
+			<span class="" style="margin-left: 1%;">
+				<button class="btn btn-primary" onclick="getIp2()">IP提取</button>
+				<input type="checkbox" id="check11"><label for="check11">匹配协议头</label>
+				<input type="checkbox" id="check12"><label for="check12">端口</label>
+				<input type="checkbox" id="check13"><label for="check13">路径及参数</label>
+				<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<input type="checkbox" id="check14"><label for="check14">补全http(s)://</label>
+				<input type="checkbox" id="check1"><label for="check1">去重</label>
+			</span>
+			<span>
+
+				<button class="btn btn-primary" style="margin-left: 5%;" onclick="matchResult()">域名提取</button>
+				<input type="checkbox" id="check21"><label for="check21">匹配协议头</label>
+				<input type="checkbox" id="check22"><label for="check22">端口</label>
+				<input type="checkbox" id="check23"><label for="check23">路径及参数</label>
+				<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<input type="checkbox" id="check26"><label for="check26">补全http(s)://</label>
+				<input type="checkbox" id="check25"><label for="check25">去重</label>
+				<input type="checkbox" id="check24"><label for="check24">主域名匹配(注意只能和去重使用)</label>
+				<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<button class="btn btn-primary" onclick="geticp('https://icp.chinaz.com/')">icp公司获取</button>
+				<a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<button class="btn btn-primary" onclick="create_grammar()">搜索引擎语法生成</button>
+			</span>
+
+			<div class="textarea-container">
+				<textarea id="text1" placeholder="请粘贴要提取的文本"
+					style="z-index: 1;margin-top: 1%;width: 100%;height: 300px; color: black;margin-bottom: 1%;"></textarea>
+			</div>
+			<div class="textarea-container" style="height:40%;display: flex; flex-direction: column;">
+				<div style="display: flex; flex-direction: row;">
+					<textarea id="text2" placeholder="IP提取结果" this.style.color='black' ; this.focus();
+						onblur="if(this.value==''){this.value=this.placeholder; this.style.color='black';}" ;
+						style="color: black;margin-top: 1%;height:300px;width: 33%;"></textarea>
+					<textarea id="text3" placeholder="域名提取结果" this.style.color='black' ; this.focus();
+						onblur="if(this.value==''){this.value=this.placeholder; this.style.color='black';}"
+						style="margin-left: 1%;margin-right: 1%; color: black;margin-top: 1%;height:300px;width: 33%;"></textarea>
+					<textarea id="text4" placeholder="icp提取结果" this.style.color='black' ; this.focus();
+						onblur="if(this.value==''){this.value=this.placeholder; this.style.color='black';}"
+						style="margin-left: 1%;margin-right: 1%; color: black;margin-top: 1%;height:300px;width: 33%;"></textarea>
+					<textarea id="text5" placeholder="备案号输入" this.style.color='black' ; this.focus();
+						onblur="if(this.value==''){this.value=this.placeholder; this.style.color='black';}"
+						style="margin-left: 1%;margin-right: 1%; color: black;margin-top: 1%;height:300px;width: 33%;"></textarea>
+				</div>
+				<div style="display: flex; flex-direction: row;">
+					<textarea id="text6" placeholder="fofa语法" this.style.color='black' ; this.focus();
+						onblur="if(this.value==''){this.value=this.placeholder; this.style.color='black';}"
+						style="margin-left: 1%;margin-right: 1%; color: black;margin-top: 1%;height:200px;width: 50%;"></textarea>
+					<textarea id="text7" placeholder="hunter语法" this.style.color='black' ; this.focus();
+						onblur="if(this.value==''){this.value=this.placeholder; this.style.color='black';}"
+						style="margin-left: 1%;margin-right: 1%; color: black;margin-top: 1%;height:200px;width: 50%;"></textarea>
+				</div>
+			</div>
+
+
+		</div>
+	</body>
+
 </html>
